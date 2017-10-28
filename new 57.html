@@ -20,18 +20,21 @@
 <form method="post" id="prechatForm">
 
 <!-- Detail inputs -->
-First Name: <input type="text" name="liveagent.prechat:contactFirstName" id='firstName'/><br />
-Last Name: <input type="text" name="liveagent.prechat:contactLastName" id='lastName'/><br />
-Email: <input type="text" name="liveagent.prechat:contactEmail" /><br />
+First Name: <input type="text" name="liveagent.prechat:personFirstName" id='firstName'/><br />
+Last Name: <input type="text" name="liveagent.prechat:personLastName" id='lastName'/><br />
+Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
 
 Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
 
 <!-- Map the detail inputs to the Contact fields --> 
-<input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,contactFirstName;LastName,contactLastName;PersonEmail,contactEmail;Phone,personphone;RecordTypeId,0127E0000008yNQQAY;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,personphone;RecordTypeId,0127E0000008yNQQAY;" />
 <!-- Used to set the visitor's name for the agent in the Console -->
 <input type="hidden" name="liveagent.prechat.name" id="prechat_field_name" />
 
-<input type="hidden" name="liveagent.prechat.save:contactFirstName" value="ARC_VisitorsFirstName__c" />
+<input type="hidden" name="liveagent.prechat.save:personFirstName" value="ARC_VisitorsFirstName__c" />
+<input type="hidden" name="liveagent.prechat.save:personLastName" value="ARC_VisitorsLastName__c" />
+<input type="hidden" name="liveagent.prechat.save:personEmail" value="ARC_VisitorsEmail__c" />
+<input type="hidden" name="liveagent.prechat.save:personphone" value="ARC_VisitorsPhone__c" />
 
 <!-- Try to find the Contact by email (exact match) 
 <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="Email,true;" />
