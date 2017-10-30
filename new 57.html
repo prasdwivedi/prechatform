@@ -26,11 +26,13 @@ Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
 
 Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
 
-<!-- Map the detail inputs to the Account fields --> 
+<!-- Map the detail inputs to the Account fields and RecordTypeId will be changed based on the Org--> 
 <input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,personphone;RecordTypeId,0127E0000008yNQQAY;" />
+
 <!-- Used to set the visitor's name for the agent in the Console -->
 <input type="hidden" name="liveagent.prechat.name" id="prechat_field_name" />
 
+<!-- Used to set the visitor's details in the Chat Transcript custom fields -->
 <input type="hidden" name="liveagent.prechat.save:personFirstName" value="ARC_VisitorsFirstName__c" />
 <input type="hidden" name="liveagent.prechat.save:personLastName" value="ARC_VisitorsLastName__c" />
 <input type="hidden" name="liveagent.prechat.save:personEmail" value="ARC_VisitorsEmail__c" />
@@ -48,6 +50,7 @@ Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
 
 
 <input type="submit" value="Request Chat" id="prechat_submit" onclick="setName()"/>
+
 <!-- Set the visitor's name for the agent in the Console to first and last name provided by the customer -->
 <script type="text/javascript">
    function setName() {
@@ -56,9 +59,6 @@ Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
     }
 </script>
 
-<style type="text/css">
-p {font-weight: bolder }
-</style>
 </form> 
 </body>
 </html>
