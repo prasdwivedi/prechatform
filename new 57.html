@@ -36,18 +36,18 @@ Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
 <input type="hidden" name="liveagent.prechat.save:personEmail" value="ARC_VisitorsEmail__c" />
 <input type="hidden" name="liveagent.prechat.save:personphone" value="ARC_VisitorsPhone__c" />
 
-<!-- Try to find the Contact by email (exact match) 
-<input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Contact" value="Email,true;" />
-<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Contact" value="Email,true;" />-->
+<!-- Try to find the Contact by email (exact match) -->
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Account" value="PersonEmail,true;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="PersonEmail,true;" />
 
 <!-- If the Contact is not found, then create one with the following fields set 
 <input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Contact" value="FirstName,true;LastName,true;Email,true;" />-->
 
-<!-- Save the Contact on the Live Chat Transcript's Contact Loookup 
-<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Contact" value="Contact" />-->
+<!-- Save the Contact on the Live Chat Transcript's Contact Loookup -->
+<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Account" value="Account" />
 
-<!-- Show the Contact when it is found or created 
-<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Contact" value="true" />-->
+<!-- Show the Contact when it is found or created -->
+<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Account" value="true" />
 
 <!-- Create a Case every time 
 <input type="hidden" name="liveagent.prechat:caseOrigin" value="Chat" />
