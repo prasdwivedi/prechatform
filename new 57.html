@@ -26,7 +26,7 @@ Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
 
 Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
 
-<!-- Map the detail inputs to the Contact fields --> 
+<!-- Map the detail inputs to the Account fields --> 
 <input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,personphone;RecordTypeId,0127E0000008yNQQAY;" />
 <!-- Used to set the visitor's name for the agent in the Console -->
 <input type="hidden" name="liveagent.prechat.name" id="prechat_field_name" />
@@ -36,28 +36,16 @@ Phone: <input type="text" name="liveagent.prechat:personphone" /><br />
 <input type="hidden" name="liveagent.prechat.save:personEmail" value="ARC_VisitorsEmail__c" />
 <input type="hidden" name="liveagent.prechat.save:personphone" value="ARC_VisitorsPhone__c" />
 
-<!-- Try to find the Contact by email (exact match) -->
+<!-- Try to find the Account by email (exact match) -->
 <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Account" value="PersonEmail,true;" />
 <input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="PersonEmail,true;" />
 
-<!-- If the Contact is not found, then create one with the following fields set 
-<input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Contact" value="FirstName,true;LastName,true;Email,true;" />-->
-
-<!-- Save the Contact on the Live Chat Transcript's Contact Loookup -->
+<!-- Save the Account on the Live Chat Transcript's Account Loookup -->
 <input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Account" value="Account" />
 
-<!-- Show the Contact when it is found or created -->
+<!-- Show the Account when it is found or created -->
 <input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Account" value="true" />
 
-<!-- Create a Case every time 
-<input type="hidden" name="liveagent.prechat:caseOrigin" value="Chat" />
-<input type="hidden" name="liveagent.prechat.findorcreate.map:Case" value="Origin,caseOrigin;Subject,caseSubject;" />
-<input type="hidden" name="liveagent.prechat.findorcreate.map.doCreate:Case" value="Origin,true;Subject,true;" />
-<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Case" value="Case" />
-<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Case" value="true" />-->
-
-<!-- Link the Contact to the Case 
-<input type= "hidden" name="liveagent.prechat.findorcreate.linkToEntity:Contact" value="Case,ContactId" />-->
 
 <input type="submit" value="Request Chat" id="prechat_submit" onclick="setName()"/>
 <!-- Set the visitor's name for the agent in the Console to first and last name provided by the customer -->
