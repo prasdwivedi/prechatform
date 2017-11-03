@@ -24,7 +24,7 @@ First Name: <input type="text" name="liveagent.prechat:personFirstName" id='firs
 Last Name: <input type="text" name="liveagent.prechat:personLastName" id='lastName'/><br />
 Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
 
-Phone: <input type="text" name="liveagent.prechat:personphone" id='Phone' /><br />
+Phones: <input type="text" name="liveagent.prechat:personphone" id='Phone' /><br />
 
 <!-- Map the detail inputs to the Account fields and RecordTypeId will be changed based on the Org--> 
 <input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,personphone;RecordTypeId,0127E0000008yNQQAY;" />
@@ -38,9 +38,9 @@ Phone: <input type="text" name="liveagent.prechat:personphone" id='Phone' /><br 
 <input type="hidden" name="liveagent.prechat.save:personEmail" value="ARC_VisitorsEmail__c" />
 <input type="hidden" name="liveagent.prechat.save:personphone" value="ARC_VisitorsPhone__c" />
 
-<!-- Try to find the Account by email (exact match) -->
+<!-- Try to find the Account by email (exact match) 
 <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Account" value="PersonEmail,true;" />
-<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="PersonEmail,true;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="PersonEmail,true;" />-->
 
 <!-- Try to find the Account by email (exact match) -->
 <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Account" value="Phone,true;" />
