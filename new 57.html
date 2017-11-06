@@ -24,7 +24,7 @@ First Name: <input type="text" name="liveagent.prechat:personFirstName" id='firs
 Last Name: <input type="text" name="liveagent.prechat:personLastName" id='lastName'/><br />
 Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
 
-Phones: <input type="text" name="liveagent.prechat:Phone" id='Phone' /><br />
+Phone: <input type="text" name="liveagent.prechat:Phone" /><br />
 
 <!-- Map the detail inputs to the Account fields and RecordTypeId will be changed based on the Org--> 
 <input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,Phone;RecordTypeId,0127E0000008yNQQAY;" />
@@ -32,10 +32,6 @@ Phones: <input type="text" name="liveagent.prechat:Phone" id='Phone' /><br />
 <!-- Try to find the Account by email (exact match) -->
 <input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Account" value="PersonEmail,true;" />
 <input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="PersonEmail,true;" />
-
-<!-- Try to find the Account by email (exact match) -->
-
-<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="Phone,true;" />
 
 <!-- Used to set the visitor's name for the agent in the Console -->
 <input type="hidden" name="liveagent.prechat.name" id="prechat_field_name" />
@@ -57,7 +53,7 @@ Phones: <input type="text" name="liveagent.prechat:Phone" id='Phone' /><br />
 
 <input type="submit" value="Request Chat" id="prechat_submit" onclick="setName()"/>
 
-<!-- Set the visitor's name for the agent in the Console to first and last name provided by the customer -->
+<!-- Set the visitor's name for the agent in the Console to first and last name provided by the customers -->
 <script type="text/javascript">
    function setName() {
     document.getElementById("prechat_field_name").value =  
