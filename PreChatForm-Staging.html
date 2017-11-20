@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html>
+<head>
+<script type="text/javascript">
+(function() { 
+  function handlePageLoad() {
+    var endpointMatcher = new RegExp("[\\?\\&]endpoint=([^&#]*)");
+    document.getElementById('prechatForm').setAttribute('action',
+    decodeURIComponent(endpointMatcher.exec(document.location.search)[1]));
+  } 
+  if (window.addEventListener) {
+    window.addEventListener('load', handlePageLoad, false);
+  } else { 
+    window.attachEvent('onload', handlePageLoad, false);
+  }
+})(); 
+</script>
+</head>
+<body>
+<form method="post" id="prechatForm">
+
+<!-- Detail inputs -->
+First Name: <input type="text" name="liveagent.prechat:personFirstName" id='firstName'/><br />
+Last Name: <input type="text" name="liveagent.prechat:personLastName" id='lastName'/><br />
+Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
+
+Phone: <input type="text" name="liveagent.prechat:Phone" /><br />
+
+<!-- Map the detail inputs to the Account fields and RecordTypeId will be changed based on the Org--> 
+<input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,Phone;RecordTypeId,0120Y000000Wf5NQAS;" />
+
+<!-- Try to find the Account by Phone and email (exact match) -->
+<input type="hidden" name="liveagent.prechat.findorcreate.map.doFind:Account" value="Phone,true;PersonEmail,true;" />
+<input type="hidden" name="liveagent.prechat.findorcreate.map.isExactMatch:Account" value="Phone,true;PersonEmail,true;" />
+
+<!-- Used to set the visitor's name for the agent in the Console -->
+<input type="hidden" name="liveagent.prechat.name" id="prechat_field_name" />
+
+<!-- Used to set the visitor's details in the Chat Transcript custom fields -->
+<input type="hidden" name="liveagent.prechat.save:personFirstName" value="ARC_VisitorsFirstName__c" />
+<input type="hidden" name="liveagent.prechat.save:personLastName" value="ARC_VisitorsLastName__c" />
+<input type="hidden" name="liveagent.prechat.save:personEmail" value="ARC_VisitorsEmail__c" />
+<input type="hidden" name="liveagent.prechat.save:Phone" value="ARC_VisitorsPhone__c" />
+
+
+
+<!-- Save the Account on the Live Chat Transcript's Account Loookup -->
+<input type="hidden" name="liveagent.prechat.findorcreate.saveToTranscript:Account" value="Account" />
+
+<!-- Show the Account when it is found or created -->
+<input type="hidden" name="liveagent.prechat.findorcreate.showOnCreate:Account" value="true" />
+
+
+<input type="submit" value="Request Chat" id="prechat_submit" onclick="setName()"/>
+
+<!-- Set the visitor's name for the agent in the Console to first and last name provided by the customers -->
+<script type="text/javascript">
+   function setName() {
+    document.getElementById("prechat_field_name").value =  
+        document.getElementById("firstName").value + " " + document.getElementById("lastName").value;
+    }
+</script>
+
+</form> 
+</body>
+</html>
