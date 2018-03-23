@@ -25,7 +25,11 @@ Last Name: <input type="text" name="liveagent.prechat:personLastName" id='lastNa
 Email: <input type="text" name="liveagent.prechat:personEmail" /><br />
 
 Phone: <input type="text" name="liveagent.prechat:Phone" /><br />
-
+Department: <select name="liveagent.prechat.buttons"> 
+          <!-- Values are LiveChatButton and/or User IDs. -->
+          <option value="5737E00000000hZ">Route through Campaign</option>
+          <option value="5737E00000000hU">Route to Complaint</option>
+      </select><br /> 
 <!-- Map the detail inputs to the Account fields and RecordTypeId will be changed based on the Org--> 
 <input type="hidden" name="liveagent.prechat.findorcreate.map:Account" value="FirstName,personFirstName;LastName,personLastName;PersonEmail,personEmail;Phone,Phone;RecordTypeId,0127E0000008yNQQAY;" />
 
